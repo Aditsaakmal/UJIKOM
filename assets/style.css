@@ -1,0 +1,184 @@
+/* Tampilan dasar */
+body {
+  background: #f5f6f8;
+  color: #253044;
+  font-family: Arial, sans-serif;
+}
+
+/* Layout aplikasi */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 235px;
+  background: #26364d;
+  color: white;
+  padding: 28px 20px;
+  flex-shrink: 0;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #edf2f9;
+  text-decoration: none;
+  padding: 11px 12px;
+  border-radius: 5px;
+  margin: 4px 0;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #3b536f;
+}
+
+/* Konten utama */
+.main {
+  padding: 30px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Header halaman */
+.page-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+
+.page-top h2 {
+  font-size: 26px;
+  margin: 0;
+}
+
+/* Panel */
+.panel {
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 7px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+/* Statistik dashboard */
+.stat {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* Tabel */
+.table th {
+  white-space: nowrap;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+/* Form */
+.form-label {
+  font-weight: 600;
+}
+
+/* Halaman login */
+.login {
+  max-width: 420px;
+  margin: 10vh auto;
+  padding: 30px;
+}
+
+/* Nominal pembayaran */
+.amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: #176a3b;
+}
+
+/* Tombol aksi */
+.actions {
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Elemen khusus cetak */
+.print-only {
+  display: none;
+}
+
+/* Tampilan tablet dan ponsel */
+@media (max-width: 768px) {
+  .app-shell {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sidebar nav a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .main {
+    padding: 18px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .login {
+    margin: 8vh 16px;
+  }
+
+  .page-top span {
+    font-size: 14px;
+  }
+}
+
+/* Tampilan saat dicetak */
+@media print {
+  .no-print,
+  .sidebar,
+  .page-top {
+    display: none !important;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  .panel {
+    border: 0;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  body {
+    background: white;
+  }
+
+  .app-shell {
+    display: block;
+  }
+}

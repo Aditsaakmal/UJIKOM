@@ -1,0 +1,250 @@
+/* Panel pembayaran */
+.panel-pembayaran {
+  padding: 20px;
+  min-width: 0;
+}
+
+.pembayaran-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* Pencarian */
+.pembayaran-filter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px auto;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.pembayaran-filter .filter-tombol {
+  display: flex;
+  gap: 8px;
+}
+
+/* Pembungkus tabel */
+.pembayaran-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+/* Tabel */
+.table.pembayaran-table {
+  width: 100%;
+  min-width: 960px;
+  table-layout: fixed;
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.pembayaran-table .col-kode {
+  width: 12%;
+}
+
+.pembayaran-table .col-siswa {
+  width: 17%;
+}
+
+.pembayaran-table .col-tanggal {
+  width: 13%;
+}
+
+.pembayaran-table .col-periode {
+  width: 14%;
+}
+
+.pembayaran-table .col-uang {
+  width: 20%;
+}
+
+.pembayaran-table .col-status {
+  width: 12%;
+}
+
+.pembayaran-table .col-aksi {
+  width: 12%;
+}
+
+.table.pembayaran-table > thead > tr > th {
+  padding: 12px 10px;
+  background: #eef2f6;
+  color: #253044;
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table.pembayaran-table > tbody > tr > td {
+  padding: 12px 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table.pembayaran-table > tbody > tr:last-child > td {
+  border-bottom: 0;
+}
+
+.table.pembayaran-table > tbody > tr:nth-child(even) > td {
+  background: #fafbfc;
+}
+
+.pembayaran-kode,
+.pembayaran-tanggal,
+.pembayaran-periode {
+  white-space: nowrap;
+}
+
+.pembayaran-nama {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.pembayaran-info {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 3px;
+}
+
+/* Rincian uang */
+.pembayaran-uang {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 8px;
+  row-gap: 4px;
+  font-size: 12px;
+}
+
+.pembayaran-uang .label-uang {
+  color: #6c757d;
+}
+
+.pembayaran-uang .nilai-uang {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.pembayaran-uang .nilai-kurang {
+  color: #b42318;
+}
+
+/* Status */
+.pembayaran-status {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pembayaran-status.lunas {
+  background: #e6f4eb;
+  color: #176a3b;
+}
+
+.pembayaran-status.belum-lunas {
+  background: #fff3cd;
+  color: #805b00;
+}
+
+/* Tombol aksi */
+.pembayaran-aksi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pembayaran-aksi form {
+  margin: 0;
+}
+
+.pembayaran-aksi .btn {
+  padding: 4px 7px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* Ringkasan */
+.pembayaran-ringkasan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.pembayaran-ringkasan span {
+  color: #6c757d;
+}
+
+.pembayaran-ringkasan strong {
+  display: block;
+  margin-top: 3px;
+  color: #253044;
+}
+
+/* Tampilan ponsel */
+@media (max-width: 768px) {
+  .panel-pembayaran {
+    padding: 14px;
+  }
+
+  .pembayaran-filter {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tampilan cetak */
+@media print {
+  .panel-pembayaran {
+    padding: 0;
+  }
+
+  .pembayaran-scroll {
+    overflow: visible;
+    border: 0;
+  }
+
+  .table.pembayaran-table {
+    min-width: 0;
+    font-size: 9px;
+  }
+
+  .table.pembayaran-table > thead > tr > th,
+  .table.pembayaran-table > tbody > tr > td {
+    padding: 6px 4px;
+    white-space: normal;
+  }
+
+  .pembayaran-kode,
+  .pembayaran-tanggal,
+  .pembayaran-periode {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .pembayaran-uang,
+  .pembayaran-info,
+  .pembayaran-status {
+    font-size: 9px;
+  }
+
+  .pembayaran-uang {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .pembayaran-uang .nilai-uang {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .pembayaran-ringkasan {
+    font-size: 10px;
+  }
+}
